@@ -1,0 +1,54 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center mt-lg-5 mb-4">
+                    <img class="img-fluid" src="{{ post.image.url }}" style="border-radius: 10px; width: 65px; height: 65px;" alt="..." />
+                    <div class="ms-3">
+                        <div class="fw-bold">{{ post.writer }}</div>
+                        <div class="text-muted">Diet, Health</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <!-- Post content-->
+                <article>
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.section }}</div>
+                        <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.add_more }}</div>
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">{{ post.created_on }}</div>
+                        <br>
+                        <!-- Post categories-->
+<!--                        <a class="badge bg-success text-decoration-none link-light" href="#!">Web Design</a>-->
+<!--                        <a class="badge bg-success text-decoration-none link-light" href="#!">Freebies</a>-->
+                    </header>
+                    <!-- Preview image figure-->
+                    <img class="img-fluid" src="{{ post.header_image.url }}" style="border-radius: 10px; width: 200px;" alt="..." /><hr style="color: white;">
+                    <section class="mb-5">
+                        <p class="fs-6 mb-4" >{{ post.content }}</p>
+                    </section>
+                </article>
+                <!-- Comments section-->
+                <section>
+                    <div class="card" style="border: 2px solid #02ca02; border-radius: 10px;">
+                        <div class="card-body">
+                            <!-- Comment form-->
+                            <form class="mb-4"><textarea class="form-control" rows="5" placeholder="Join the discussion and leave a comment!" style="border: 2px solid #02ca02; border-radius: 10px;"></textarea></form>
+                             <input class="btn btn-outline-light" style="border-radius: 20px; border: 2px solid #02ca02; width: 250px;" type="submit">
+                        </div>
+                    </div>
+            </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+ {% endblock %}

@@ -1,0 +1,336 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+            <!-- Header-->
+            <header class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({% static 'img/banner-bk.jpg' %}); padding-top: 100px; padding-bottom: 100px; background-attachment: fixed;">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="text-white" style="font-family: 'Berkshire Swash', cursive; font-weight: 900;">Nutrition Life Matrix</h1>
+                                <p class="lead fw-normal text-white mb-4">We will help you learn more about your health and how to keep fit. We will help you on how to shield yourself from diseases.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-outline-light btn-lg px-4 me-sm-3" style="border-radius: 20px;" href="#"><span></span>Get Started</a>
+                                    <a class="btn btn-outline-light btn-lg px-4 me-sm-3" style="border-radius: 20px;" href="#scroll-target"><span></span>Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Features section-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0 text-black" style="font-family: system-ui;">A better way to start staying healthy.</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                {% for dailypost in dailypost %}
+                                <div class="col mb-5 h-100 text-black">
+                                    <!-- <div><i class="fa fa-facebook"></i></div> -->
+                                <img style="border-radius: 10px; margin-bottom: 10px; cursor: pointer;" src="{{ dailypost.image.url }}" width="230" height="130" alt="..." />
+                                    <!-- <div class="feature bg-success bg-gradient text-white rounded-3 mb-3"><i class="fa fa-chat-dots"></i></div> -->
+                                    <h2 class="h5">{{ dailypost.title }}</h2>
+                                    <p class="mb-0" style="padding-bottom: 10px;">{{ dailypost.content }}</p>
+                                    <p class="mb-0" style="font-size: 1.7rem; font-weight: 600; font-family: cursive;">{{ dailypost.doctor }}</p>
+                                </div>
+                                {% endfor %}
+                                
+                                <!-- <div class="col mb-5 h-100 text-black">
+                                    <div><i class="bi bi-building"></i></div>
+                                <img class="rounded-3 mb-3" src="{% static 'img/Bugati.jpeg' %}" width="60" height="45" alt="..." />
+                                    <div class="feature bg-success bg-gradient text-white rounded-3 mb-3"><i class="fa fa-chat-dots"></i></div>
+                                    <h2 class="h5">Beans with Raw Onions</h2>
+                                    <p class="mb-0">This is good for people especially for those who has problem reading/seeing.</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100 text-black">
+                                    <div><i class="bi bi-toggles2"></i></div>
+                                <img class="rounded-3 mb-3" src="{% static 'img/benz.jpeg' %}" width="60" height="45" alt="..." />
+                                    <div class="feature bg-success bg-gradient text-white rounded-3 mb-3"><i class="fa fa-chat-dots"></i></div>
+                                    <h2 class="h5">Benefits of Raw Onions to the body</h2>
+                                    <p class="mb-0">Raw onions has different benefits to the body but it mainly make the eye clearer.</p>
+                                </div>
+                                <div class="col h-100 text-black">
+                                    <div><i class="bi bi-toggles2"></i></div>
+                                <img class="rounded-3 mb-3" src="{% static 'img/ferrai.jpeg' %}" width="60" height="45" alt="..." />
+                                    <div class="feature bg-success bg-gradient text-white rounded-3 mb-3"><i class="fa fa-food"></i></div>
+                                    <h2 class="h5">Classic Rice</h2>
+                                    <p class="mb-0">This is a very delicious meal especially cooked with basmatic rice and beans with other vegetables.</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- Blog preview section-->
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder text-black" style="font-family: cursive; font-size: 2.7rem;">Featured Posts</h2>
+                        <br>
+                    </div>
+
+<!--            <div class="search-box" style="background: #fff; width: 350px;  display: flex; align-items: center; padding: 0 15px;">-->
+<!--                 <img src="{% static 'img/search1.jpg' %}" style="width: 20px;" alt="">-->
+<!--                <input type="text" placeholder="Search" style="width: 100%; border-radius: 20px; background: transparent; padding: 10px; outline: none; border: 1px solid #fff;">-->
+<!--            </div>-->
+                     <div class="form-group col-md-6">
+                        <!-- <img src="{% static 'img/search1.jpg' %}" style="width: 25px;"> -->
+                         <div><i class="fa fa-search"></i><input  style="border: 2px solid black; border-radius: 25px; padding-top: 5px; padding-bottom: 5px; padding-left: 8px; padding-right: 10px; width: 320px;" id="search1" type="search" placeholder="Search for posts..." /></div>
+                     </div>
+
+                    <div class="text-white"> ||</div>
+                    <div class="text-white"> ||</div>
+
+                    <div class="row gx-5">
+                         {% for post in posts %}
+                         <!-- id="post_box" -->
+                        <div class="col-lg-4 mb-5" id="feature-post">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body p-4">
+                                    <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.section }}</div>  <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.add_more }}</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{% url 'detail-featured' post.slug %}"><div class="h5 card-title mb-3">{{ post.title }}</div></a>
+                                    <p class="card-text mb-0">{{ post.first_content }} <br> <span style="color: gray; text-decoration: none;">See More...</span></p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="me-3" src="{{ post.image.url }}" style="border-radius: 10px; width: 55px; height: 55px;" alt="..." />
+                                            <div class="small">
+                                                <div class="fw-bold">{{ post.writer }}</div>
+                                                <div class="text-muted">{{ post.created_on }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="jumbotron jumbotron-fluid" style="background-image: url({% static 'img/banner-bk.jpg' %}); padding-top:10px; padding-bottom:10px;">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            {% for reviewpost in reviewpost %}
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 text-white fst-italic">{{ reviewpost.content }}</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="me-3" style="width: 70px; height: 80px; border-radius: 20px;" src="{{ reviewpost.image.url }}" width="45" height="45" alt="..." />
+                                    <div class="fw-bold text-white">
+                                        {{ reviewpost.writer }}
+                                        <span class="fw-bold text-white mx-1">/</span>
+                                        {{ reviewpost.career }}, {{ reviewpost.hospital }}
+                                        <span class="fw-bold text-white mx-1">/</span>
+                                        {{ reviewpost.created_on }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog preview section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <h2 class="fw-bolder text-black" style="font-family: cursive; font-size: 2.7rem;">Popular Posts</h2>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group col-md-6">
+<!--                          <img src="{% static 'img/search1.jpg' %}" style="width: 25px;">-->
+                            <i class="fa fa-search"></i><input style="border: 2px solid black; border-radius: 25px; padding-top: 5px; padding-bottom: 5px; padding-left: 8px; padding-right: 10px; width: 320px;" id="search2" type="search" placeholder="Search for posts..." />
+                     </div>
+
+                        <div class="text-white"> ||</div>
+                        <div class="text-white"> ||</div>
+
+                    <div class="row gx-5">
+                        {% for posts in post %}
+                        <div class="col-lg-4 mb-5" id="popular-post">
+<!--                            <img class="card-img-top" src="" alt="..." />-->
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body p-4">
+                                    <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ posts.section }}</div>  <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.add_more }}</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{% url 'detail' posts.slug %}"><h5 class="card-title mb-3">{{ posts.title }}</h5></a>
+                                    <p class="card-text mb-0">{{ posts.first_content }} <br> <span style="color: gray; text-decoration: none;">See More...</span></p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="me-3" src="{{ posts.image.url }}" style="border-radius: 10px; width: 55px; height: 55px;" alt="..." />
+                                            <div class="small">
+                                                <div class="fw-bold">{{ posts.writer }}</div>
+                                                <div class="text-muted">{{ posts.created_on }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+<!--                        <div class="col-lg-4 mb-5">-->
+<!--                            <div class="card h-100 shadow border-0">-->
+<!--                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />-->
+<!--                                <div class="card-body p-4">-->
+<!--                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>-->
+<!--                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Another blog post title</h5></a>-->
+<!--                                    <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                                </div>-->
+<!--                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">-->
+<!--                                    <div class="d-flex align-items-end justify-content-between">-->
+<!--                                        <div class="d-flex align-items-center">-->
+<!--                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />-->
+<!--                                            <div class="small">-->
+<!--                                                <div class="fw-bold">Josiah Barclay</div>-->
+<!--                                                <div class="text-muted">March 23, 2022 &middot; 4 min read</div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-4 mb-5">-->
+<!--                            <div class="card h-100 shadow border-0">-->
+<!--                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />-->
+<!--                                <div class="card-body p-4">-->
+<!--                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>-->
+<!--                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">The last blog post title is a little bit longer than the others</h5></a>-->
+<!--                                    <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                                </div>-->
+<!--                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">-->
+<!--                                    <div class="d-flex align-items-end justify-content-between">-->
+<!--                                        <div class="d-flex align-items-center">-->
+<!--                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />-->
+<!--                                            <div class="small">-->
+<!--                                                <div class="fw-bold">Evelyn Martinez</div>-->
+<!--                                                <div class="text-muted">April 2, 2022 &middot; 10 min read</div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+<!--                     Call to action-->
+<!--                    <aside class="bg-success bg-gradient rounded-3 p-4 mt-5">-->
+<!--                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">-->
+<!--                            <div class="mb-4 mb-xl-0">-->
+<!--                                <div class="fs-3 fw-bold text-white">Learn More About NLM.</div>-->
+<!--                                <div class="text-white-50">Sign up to see more of our latest updates.</div>-->
+<!--                            </div>-->
+<!--                            <div class="ms-xl-4">-->
+<!--                                <div class="input-group mb-2">-->
+<!--                                    <input class="form-control" type="email" placeholder="Email address..." aria-label="Email address..." />-->
+<!--                                </div>-->
+<!--                                <div class="input-group mb-2">-->
+<!--                                    <input class="form-control" type="password" placeholder="Password..." aria-label="Password..." />-->
+<!--                                </div>-->
+<!--                                <div class="d-grid"><button class="btn btn-outline-light" id="submitButton" type="submit">Submit</button></div>-->
+<!--&lt;!&ndash;                                <button class="btn btn-outline-light" id="button" type="button">Sign up</button>&ndash;&gt;-->
+<!--                                <div class="small text-white-50">We care about privacy, and will never share your data.</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </aside>-->
+                </div>
+            </section>
+    <!-- Our Work -->
+         <div class="jumbotron jumbotron-fluid" style="padding-top: 30px; padding-bottom: 30px; border-top: 5px solid #02ca02;">
+            <!-- box-shadow: 1rem 1rem 1rem 0.8rem #02ca02; -->
+        <div class="container" >
+            <div class="row">
+<!--                <center><h5 class="display-5 fw-bolder mb-2">Other Of Our Companies</h5></center>-->
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.google.com" target="_blank"><img src="{% static 'img/client-1.png' %}" class="mx-auto d-block"></a>
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.facebook.com" target="_blank"><img src="{% static 'img/client-2.png' %}" class="mx-auto d-block"></a>
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.instagram.com" target="_blank"><img src="{% static 'img/client-3.png' %}" class="mx-auto d-block"></a>
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.twitter.com" target="_blank"><img src="{% static 'img/client-4.png' %}" class="mx-auto d-block"></a>
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.reddict.com" target="_blank"><img src="{% static 'img/client-5.png' %}" class="mx-auto d-block"></a>
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <a href="https://www.linkedin.com" target="_blank"><img src="{% static 'img/client-6.png' %}" class="mx-auto d-block"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %}); padding-top:100px; padding-bottom:10px;">
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white">
+                    <h1 class="font-weight-bold" style="font-family: cursive; color: #02ca02; font-size: 45px;">Newsletter</h1>
+                    <h5 class="my-4">
+                        Fill up the form to stay in touch with us.
+                        <br> Or call the number below your screen.
+                        <br> And also send us an email for more information.
+                    </h5>
+                </div>
+                <div class="col-md-6">
+                    <form method="POST">
+                        {% csrf_token %}
+                    	<div class="row">
+                            <div class="form-group col-md-6 text-success">
+                                <label for="Username">Full Name</label>
+                                <input type="text" name="user_name" class="form-control" style="border-radius: 10px; background: transparent; border: 2px solid #02ca02; margin-top: 3px; padding: 10px; color: white;" id="Full Name" required="required">
+	                        </div>
+                            <br>
+                             <div class="form-group col-md-6 text-success">
+                                <label for="Email">Email</label>
+                                <input type="email" name="user_email" class="form-control" style="border-radius: 10px; background: transparent; border: 2px solid #02ca02; margin-top: 3px; padding: 10px; color: white;" id="Email" required="required">
+	                        </div>
+<!--	                        <div class="form-group col-md-6 text-white">-->
+<!--	                            <label for="Email">Your Email</label>-->
+<!--	                            <input type="Email" class="form-control" id="Email">-->
+<!--	                        </div>-->
+	                        <div class="form-group col-md-6 text-success">
+	                            <label for="Phone Number" style="padding-top: 10px;">Phone Number</label>
+	                            <input type="number" name="user_phone" class="form-control" style="border-radius: 10px; background: transparent; border: 2px solid #02ca02; margin-top: 3px; padding: 10px; color: white; width: 635px;" id="Phone Number" required="required">
+	                        </div>
+                            <!-- <div class="form-group col-md-6 text-success">
+	                            <label for="Subject" style="padding-top: 10px;">Subject</label>
+	                            <input type="text" name="user_subject" class="form-control" style="border-radius: 10px; background: transparent; border: 2px solid #02ca02; margin-top: 3px; padding: 10px; color: white;" id="Subject" required="required">
+	                        </div>
+	                    </div>
+                        <br>
+	                    <div class="form-group text-success">
+	                        <label for="message">How Can We Help?</label>
+	                        <textarea class="form-control" name="user_message" style="border-radius: 10px; background: transparent; border: 2px solid #02ca02; margin-top: 3px; color: white;" id="message" rows="3"></textarea>
+	                    </div> -->
+                        <br>
+                        <div class="d-grid">
+                            <input class="btn btn-success" style="border-radius: 10px; margin-top: 10px;" type="submit" placeholder="Submit">
+                            <!-- <a class="btn btn-success" style="border-radius: 10px;" href="{% url 'index' %}">Submit</a> -->
+<!--                            <br>-->
+<!--                    <div class="text-center">-->
+<!--                        <a class="fs-5 px-2 link-primary" href="https://facebook.com"><i class="fa fa-facebook"></i></a>-->
+<!--                        <a class="fs-5 px-2 link-primary" href="https://twitter.com"><i class="fa fa-twitter"></i></a>-->
+<!--                        <a class="fs-5 px-2 link-primary" href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>-->
+<!--                        <a class="fs-5 px-2 link-primary" href="https://youtude.com"><i class="fa fa-youtube"></i></a>-->
+<!--                    </div>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Footer-->
+{% endblock %}

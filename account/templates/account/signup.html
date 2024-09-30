@@ -1,0 +1,201 @@
+{% extends 'account/base.html'%}
+{% load static %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %}); padding-top:100px; padding-bottom:100px;">
+    <div class="container my-5">
+        <div class="row justify-content-between">
+            <div class="col-md-6 text-white">
+                <h1 class="font-weight-bold text-success" style="font-family: cursive; font-size: 45px;">Sign Up</h1>
+                <h5 class="my-4">
+                    Sign Up to learn more!
+                </h5>
+                <ul class="list-unstyled">
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Email</li></h5>
+                    <h6><li>kingsleyrichardsgeorge4@gmail.com</li></h6>
+                    <h6><li>kingsleygeorge751@gmail.com</li></h6>
+                    <h6><li>kingsgeorge751@gmail.com</li></h6>
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Phone</li></h5>
+                    <h6><li>+234-808-924-8520</li></h6>
+                    <h6><li>+234-703-988-997</li></h6>
+                    <h6><li>+01-564-600-534</li></h6>
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Address</li></h5>
+                    <h6><li>4826 White Avenue, Corpus Christi, Houston, Texas, USA.</li></h6>
+                    <h6><li>No 7, Fed Low-Cost Housing Estate, Kuje, Abuja, Nigeria.</li></h6>
+                    <h6><li>563 Cape Town, South Africa.</li></h6>
+                </ul>
+            </div>
+
+            
+
+            <div class="col-md-6">
+
+                <div style="color:red; text-align: center">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+
+                <form method="post">
+                        {% csrf_token %}
+                     <!-- UserName input-->
+                        <label for="username" style="padding-left: 8px;" class="text-success">UserName</label>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" name="username" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="username" type="text" required="required" data-sb-validations="required,email" />
+                        </div>
+                         <!-- Email Address input-->
+                          <label for="email" style="padding-left: 8px;" class="text-success">Email Address</label>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" name="email" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="email" type="email" required="required" data-sb-validations="required" />
+                        </div>
+                        <!-- Password input-->
+                         <label for="password" style="padding-left: 8px;" class="text-success">Password</label>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" name="password" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="password" type="password" required="required" data-sb-validations="required" />
+                        </div>
+                         <!-- Confirm Password input-->
+                         <label for="confirm password" style="padding-left: 8px;" class="text-success">Confirm Password</label>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" name="password2" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="confirm password" type="password" required="required" data-sb-validations="required" />
+                        </div>
+                        <br>
+                        <input class="btn btn-success" style="border-radius: 15px; height: 40px; width: 100%" type="submit">
+                        <br>
+                        <!-- <p class="text-white" style="font-size: 20px; padding-top: 6px;">Already have an account | <a href="{% url 'login' %}" class="sign-btn-a"><button class="sign-btn">Login</button></a></p> -->
+
+                         <p class="text-white" style="font-size: 20px; padding-top: 6px;">Already have an account | <a href="{% url 'login' %}" style="text-decoration: none; color: #02ca02; font-weight: 600;" class="lead">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  <section class="py-5 jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %});">-->
+<!--                <div class="container px-5">-->
+<!--                    &lt;!&ndash; Contact form&ndash;&gt;-->
+<!--                    <div class="img-fluid rounded-circle mb-4 px-4">-->
+<!--                        <div class="text-center mb-5">-->
+<!--                            <h1 class="fw-bolder text-white">Sign Up</h1>-->
+<!--                            <p class="lead fw-normal text-white mb-0">We'd love to hear from you</p>-->
+<!--                        </div>-->
+<!--                        <div class="row gx-5 justify-content-center">-->
+<!--                            <div class="col-lg-8 col-xl-6">-->
+<!--                                <form method="post">-->
+<!--                            -->
+<!--                         &lt;!&ndash; UserName input&ndash;&gt;-->
+<!--                            <label for="username" class="text-white">UserName</label>-->
+<!--                            <div class="form-group col-md-6">-->
+<!--                                <input class="form-control" name="username" id="username" type="text" data-sb-validations="required,email" />-->
+<!--                            </div>-->
+<!--                             &lt;!&ndash; Email Address input&ndash;&gt;-->
+<!--                              <label for="email" class="text-white">Email Address</label>-->
+<!--                            <div class="form-group col-md-6">-->
+<!--                                <input class="form-control" name="email" id="email" type="email" data-sb-validations="required" />-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; Password input&ndash;&gt;-->
+<!--                             <label for="password" class="text-white">Password</label>-->
+<!--                            <div class="form-group col-md-6">-->
+<!--                                <input class="form-control" name="password" id="password" type="password" data-sb-validations="required" />-->
+<!--                            </div>-->
+<!--                             &lt;!&ndash; Confirm Password input&ndash;&gt;-->
+<!--                             <label for="confirm password" class="text-white">Confirm Password</label>-->
+<!--                            <div class="form-group col-md-6">-->
+<!--                                <input class="form-control" name="password2" id="confirm password" type="password" data-sb-validations="required" />-->
+<!--                            </div>-->
+<!--                             <br>       -->
+<!--                            <input class="btn btn-outline-success" style="border-radius: 100px; width: 270px;" type="submit">-->
+<!--                             <br>-->
+<!--                             <p class="text-white">Already have an account | <a href="{% url 'login' %}" class="text-blue lead">Login</a></p>-->
+<!--            </div>-->
+<!--        </form>                             -->
+<!--                                    <br>-->
+<!--                                    <p class="lead fw-normal text-center mb-0 text-white">Already have an account  <a href="{% url 'login' %}">Login</a></p>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--  </section>-->
+<!--                    <style>-->
+<!--                 section article{-->
+<!--                text-align: center;-->
+<!--                height: 550px;-->
+<!--                width: 600px;-->
+<!--                border-radius: 10px;-->
+<!--                padding: 15px;-->
+<!--            }-->
+
+<!--            form1 input{&ndash;&gt;-->
+<!--                height: 30px;-->
+<!--                width: 100px;-->
+<!--                background-color: #269432d1;-->
+<!--                border-radius: 10px;-->
+<!--                box-shadow: 5px 5px 2.5px black;-->
+<!--            }-->
+
+<!--            form1 input:hover{-->
+<!--                background-color: #08ff25d1;-->
+<!--            }-->
+
+<!--            section article a{-->
+<!--                height: 30px;-->
+<!--                width: 200px;-->
+<!--                border-radius: 5px;-->
+<!--            }-->
+<!--</style>-->
+<!--<div class="container">-->
+<!--  <form method="post">-->
+<!--    -->
+<!--    <input type="text" name="username" placeholder="Username.."><br>-->
+<!--    <input type="email" name="email" placeholder="Email.."><br>-->
+<!--    <input type="password" name="password" placeholder="Password.."><br>-->
+<!--    <input type="password" name="password2" placeholder="Confirm Password.."><br>-->
+<!--    <input type="submit" value="Submit"><br>-->
+<!--    Already have an account <a href="#!">Login</a>-->
+<!--  </form>-->
+<!--</div>-->
+<!--        <section class="py-5">-->
+<!--            <div class="container px-5">-->
+<!--                <div class="img-fluid rounded-circle mb-4 px-4">-->
+<!--                <div class="text-center mb-5">-->
+<!--                    <h1 class="fw-bolder">Sign Up</h1>-->
+<!--                    <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+<!--                </div>-->
+<!--                <div class="row gx-5 justify-content-center">-->
+<!--                    <div class="col-lg-8 col-xl-6">-->
+<!--                <form method="post">-->
+<!--                    -->
+<!--                    &lt;!&ndash; UserName input&ndash;&gt;-->
+<!--                    <label for="user">UserName</label>-->
+<!--                    <div class="form-floating mb-3">-->
+<!--                    <input id="user" type="text" name="username">-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Email Address input&ndash;&gt;-->
+<!--                    <label for="email">Email</label>-->
+<!--                    <div class="form-floating mb-3">-->
+<!--                    <input id="email" type="email" name="email">-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Password input&ndash;&gt;-->
+<!--                    <label for="password">Password</label>-->
+<!--                    <div class="form-floating mb-3">-->
+<!--                    <input id="password" type="password" name="password">-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Confirm Password input&ndash;&gt;-->
+<!--                    <label for="password2">Confirm Password</label>-->
+<!--                    <div class="form-floating mb-3">-->
+<!--                    <input id="password2" type="password" name="password2">-->
+<!--                    </div>-->
+<!--                    <form1>-->
+<!--                        <center><input type="submit" value="Submit"></center>-->
+<!--                     </form1>-->
+<!--                </form>-->
+<!--                <br>-->
+<!--               Already have an account  <a href="https://facebook.com">Login</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block title %}Pricing{% endblock %}
+
+{% block content %}
+            <!-- Pricing section-->
+<!--            <section class="bg_dark py-5">-->
+<!--                <div class="container px-5 my-5">-->
+<!--                    <div class="text-center mb-5">-->
+<!--                        <h1 class="fw-bolder">Pay as you go</h1>-->
+<!--                        <p class="lead fw-normal text-muted mb-0">With us, there is no hassle pricing plans</p>-->
+<!--                    </div>-->
+<!--                    <div class="row gx-5 justify-content-center">-->
+<!--                        &lt;!&ndash; Pricing card free&ndash;&gt;-->
+<!--                        <div class="col-lg-6 col-xl-4">-->
+<!--                            <div class="card mb-5 mb-xl-0">-->
+<!--                                <div class="card-body p-5">-->
+<!--                                    <div class="small text-uppercase fw-bold ">Free</div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <span class="display-4 fw-bold">$0</span>-->
+<!--                                        <span class="text-dark">/ MO.</span>-->
+<!--                                    </div>-->
+<!--                                    <ul class="list-unstyled mb-4">-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            <strong>5 users</strong>-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            5GB Storage-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Free Public Projects-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Free Community Access-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-x"></i>-->
+<!--                                            Free Linked Domain-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-muted">-->
+<!--                                            <i class="bi bi-x"></i>-->
+<!--                                            Unlimited private projects-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-muted">-->
+<!--                                            <i class="bi bi-x"></i>-->
+<!--                                            Dedicated support-->
+<!--                                        </li>-->
+<!--                                        <li class="text-muted">-->
+<!--                                            <i class="bi bi-x"></i>-->
+<!--                                            Monthly Status Reports-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="d-grid"><a class="btn btn-outline-success" href="https://paypal.com">Choose plan</a></div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <!-- Pricing card pro-->
+                        <div class="col-lg-6 col-xl-4">
+<!--                            <div class="card mb-5 mb-xl-0">-->
+<!--                                <div class="card-body p-5 bg-dark">-->
+<!--                                    <div class="small text-uppercase fw-bold text-light">-->
+<!--                                        <i class="bi bi-star-fill"></i>-->
+<!--                                        Enterprise-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <span class="display-4 fw-bold text-light">$49</span>-->
+<!--                                        <span class="text-light">/ MO.</span>-->
+<!--                                    </div>-->
+<!--                                    <ul class="list-unstyled mb-4">-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            <strong>Unlimited Users</strong>-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Storage-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Public Projects-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Community Access-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Dedicated Support-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Linked Domain-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-x"></i>-->
+<!--                                            Unlimited Monthly Status Reports-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2 text-light">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Unlimited Private Projects-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="d-grid"><a class="btn btn-success" href="https://paypal.com">Choose plan</a></div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <!-- Pricing card enterprise-->
+                        <div class="col-lg-6 col-xl-4">
+<!--                            <div class="card">-->
+<!--                                <div class="card-body p-5">-->
+<!--                                    <div class="small text-uppercase fw-bold ">Pro</div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <span class="display-4 fw-bold">$9</span>-->
+<!--                                        <span class="text-dark">/ MO.</span>-->
+<!--                                    </div>-->
+<!--                                    <ul class="list-unstyled mb-4">-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            <strong>10 Users</strong>-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            10GB Storage-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Public Projects-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Community Access-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Private Projects-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Dedicated Support-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Linked Domains-->
+<!--                                        </li>-->
+<!--                                        <li class="mb-2">-->
+<!--                                            <i class="bi bi-check text-primary"></i>-->
+<!--                                            Monthly Status Reports-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="d-grid"><a class="btn btn-outline-success" href="https://paypal.com">Choose plan</a></div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Footer-->
+        
+<section class="py-5 jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %});">
+    <div class="container my-5 py-2" id="price-table">
+        <center><h1 class="fw-bolder" style="color: white; font-family: 'Berkshire Swash', cursive;">Check Our Pricing</h1></center>
+        <h2 class="text-center font-weight-bold d-block mb-3" style="color: white;">Pay as you go</h2>
+        <div class="row">
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" style="border: 2px solid #02ca02; border-radius: 10px; width: 360px; margin-right: 40px; margin-left: 90px;" class="col-md-4 text-center py-4 mt-5">
+                <h4 class="my-4" style="color: white;">FREE</h4>
+                <p class="font-weight-bold" style="color: white; font-size: 1.5rem;">$ <span class="display-2 font-weight-bold">0</span> / MO.</p>
+                <ul class="list-unstyled" style="color: white;">
+                    <li>5 Users</li>
+                    <li>5GB Storage</li>
+                    <li>Free Linked Domain</li>
+                    <li>Free Public Projects</li>
+                    <li>Free Community Access</li>
+                    <li style="text-decoration: line-through;">Private Projects</li>
+                    <li style="text-decoration: line-through;">Dedicated Support</li>
+                    <li style="text-decoration: line-through;">Monthly Status Reports</li>
+                </ul>
+                <a href="https://paypal.com" class="btn btn-outline-light px-4" style="border-radius: 15px; border: 2px solid #02ca02; color: white;">Get Started</a>
+            </div>
+            <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" style="background: #121212; border: 2px solid #02ca02; border-radius: 10px; width: 360px; margin-right: 35px;" data-aos-once="true" class="col-md-4 text-center py-4 mt-5">
+                <span class="recommanded">Featured</span>
+                <h4 class="my-4" style="color: white;">PROFESSIONAL</h4>
+                <p class="font-weight-bold" style="color: white; font-size: 1.5rem;">$ <span class="display-2 font-weight-bold">30</span> / MO.</p>
+                <ul class="list-unstyled" style="color: white;">
+                    <li>Unlimited Users</li>
+                    <li>Unlimited Storage</li>
+                    <li>Unlimited Linked Domain</li>
+                    <li>Unlimited Public Projects</li>
+                    <li>Unlimited Community Access</li>
+                    <li>Unlimited Private Projects</li>
+                    <li>Unlimited Dedicated Support</li>
+                    <li>Unlimited Monthly Status Reports</li>
+                </ul>
+                <a href="https://paypal.com" class="btn btn-outline-light px-4" style="border-radius: 15px; border: 2px solid #02ca02; color: white;">Get Started</a>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" style="border: 2px solid #02ca02; border-radius: 10px; width: 360px; " class="col-md-4 text-center py-4 mt-5" id="price-table__premium">
+                <h4 class="my-4 text-white">PREMIUM</h4>
+                <p class="font-weight-bold text-white" style="font-size: 1.5rem;">$ <span class="display-2 font-weight-bold text-white">10</span> / MO.</p>
+                <ul class="list-unstyled text-white">
+                    <li>10 Users</li>
+                    <li>10GB Storage</li>
+                    <li>Linked Domain</li>
+                    <li>Public Projects</li>
+                    <li>Community Access</li>
+                    <li>Private Projects</li>
+                    <li>Dedicated Support</li>
+                    <li>Monthly Status Reports</li>
+                </ul>
+                <a href="https://paypal.com" class="btn btn-outline-light px-4" style="border-radius: 15px; border: 2px solid #02ca02; color: white;">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+            <!-- Page content-->
+            <section class="py-5 jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %});">
+                <div class="container px-5">
+                    <!-- Contact form-->
+                    <div class="img-fluid rounded-circle mb-4 px-4">
+                        <div class="text-center mb-5">
+<!--                            <div class="feature bg- bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>-->
+<!--                            <img class="rounded-3 mb-3" src="" width="60" height="45" alt="..." />-->
+                            <h1 class="fw-bolder text-white" style="font-family: 'Berkshire Swash', cursive;">Contact Us</h1>
+                            <p class="lead fw-normal text-white mb-0">We'd love to hear from you</p>
+                        </div>
+
+                        <div style="color:#02ca02; text-align: center; padding-bottom: 20px;">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST">
+                                    {% csrf_token %}
+                                    <!-- Name input-->
+                                    <label for="name" class="text-success" style="padding-bottom: 5px;">Full name</label>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="name" required="required" style="padding: 10px; border-radius: 10px; color: white; height: 50px; background: transparent; border: 2px solid #02ca02;" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <!-- <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div> -->
+                                    </div>
+                                    <!-- Email address input-->
+                                    <label for="email" class="text-success" style="padding-bottom: 5px;">Email address</label>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="email" required="required" style="padding: 10px; border-radius: 10px; color: white; height: 50px; background: transparent; border: 2px solid #02ca02;" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <!-- <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div> -->
+                                    </div>
+                                    <!-- Phone number input-->
+                                     <label for="phone" class="text-success" style="padding-bottom: 5px;">Phone number</label>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="phone" required="required" style="padding: 10px; border-radius: 10px; color: white; height: 50px; background: transparent; border: 2px solid #02ca02;" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <!-- <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div> -->
+                                    </div>
+                                     <!--  Subject input-->
+                                     <label for="phone" class="text-success" style="padding-bottom: 5px;">Subject</label>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="subject" required="required" style="padding: 10px; border-radius: 10px; color: white; height: 50px; background: transparent; border: 2px solid #02ca02;" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <!-- <div class="invalid-feedback" data-sb-feedback="phone:required">A subject is required.</div> -->
+                                    </div>
+                                    <!-- Message input-->
+                                    <label for="message" class="text-success" style="padding-bottom: 5px;">How Can We Help?</label>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" name="message" required="required" style="padding: 10px; border-radius: 10px; background: transparent; color: white; height: 10rem; border: 2px solid #02ca02;" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <!-- <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div> -->
+                                    </div>
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Form submission successful!</div>
+                                            To activate this form, sign up at
+                                            <br />
+                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+<!--                                    <div class="d-grid"><button class="btn btn-success" id="submitButton" type="submit">Submit</button></div>-->
+                                     <div class="d-grid">
+                                        <input class="btn btn-success btn-lg px-4 me-sm-3" style="border-radius: 10px; width: 565px; border: 2px solid #02ca02;" type="submit" placeholder="Submit">
+                                        <!-- <a class="btn btn-success btn-lg px-4 me-sm-3" style="border-radius: 10px; width: 565px; border: 2px solid green;" href="{% url 'index' %}">Submit</a> -->
+                                         <br>
+<!--                                            <div class="text-center">-->
+<!--                                                <a class="fs-5 px-2 link-primary" href="https://facebook.com"><i class="fa fa-facebook"></i></a>-->
+<!--                                                <a class="fs-5 px-2 link-primary" href="https://twitter.com"><i class="fa fa-twitter"></i></a>-->
+<!--                                                <a class="fs-5 px-2 link-primary" href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>-->
+<!--                                                <a class="fs-5 px-2 link-primary" href="https://youtude.com"><i class="fa fa-youtube"></i></a>-->
+<!--                                            </div>-->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact cards-->
+                    <div class="row gx-5 row-cols-5 row-cols-lg-3 py-5" style="line-height: 2;" id="id">
+                        <div class="col" id="contact-id">
+                           <div class="feature bg-success bg-gradient text-white rounded-3 mb-3" style="width: 70px;"><i style="font-size: 2rem;" class="fa fa-envelope"></i></div>
+<!--                            <img class="rounded-3 mb-3" src="" width="60" height="45" alt="..." />-->
+                            <div class="h5 mb-2 text-white" style="font-size: 1.4rem;">Email</div>
+                            <hr style="border: 2px solid #2eef2e; width: 100px; border-radius: 10px; margin-left: 7.3rem;">
+                            <p class="mb-0 text-white"><a href="mailto:examplemail@gmail.com" class="mail">kingsleyrichardsgeorge4@gmail.com</a></p>
+                            <p class="mb-0 text-white"><a href="mailto:examplemail@gmail.com" class="mail">kingsleygeorge751@gmail.com</a></p>
+                            <p class="mb-0 text-white"><a href="mailto:examplemail@gmail.com" class="mail">kingsgeorge751@gmail.com</a></p>
+                        </div>
+                        <div class="col" id="contact-id">
+                           <div class="feature bg-success bg-gradient text-white rounded-3 mb-3" style="width: 70px; line-height: 2;"><i style="font-size: 2rem;" class="fa fa-map-marker"></i></div>
+<!--                            <img class="rounded-3 mb-3" src="{}" width="60" height="45" alt="..." />-->
+                            <div class="h5 text-white" style="font-size: 1.4rem;">Address</div>
+                            <hr style="border: 2px solid #2eef2e; width: 100px; border-radius: 10px; margin-left: 7.3rem;">
+                            <p class="text-white mb-0">4826 Corpus Christi, Houston, Texas, USA.</p>
+                            <p class="text-white mb-0">Fed Low-Cost Housing Estate, Abuja, Nigeria.</p>
+                            <p class="text-white mb-0">563 Cape Town, South Africa.</p>
+                        </div>
+                        <div class="col" id="contact-id">
+                            <div class="feature bg-success bg-gradient text-white rounded-3 mb-3" style="width: 70px;"><i style="font-size: 2rem;" class="fa fa-phone"></i></div>
+                            <!-- <img class="rounded-3 mb-3" src="" width="60" height="45" alt="..." /> -->
+                            <div class="h5 text-white" style="font-size: 1.4rem;">Phone</div>
+                            <hr style="border: 2px solid #05ec05; width: 100px; border-radius: 10px; margin-left: 7.3rem;">
+                            <p class="text-white mb-0">+234-808-924-8520</p>
+                            <p class="text-white mb-0">+234-703-988-997</p>
+                            <p class="text-white mb-0">+01-564-600-534</p>
+                         </div>
+                        <!-- <div class="col">
+                           <div class="feature bg-success bg-gradient text-white rounded-3 mb-3"><i class="fa fa-group"></i></div>
+                           <img class="rounded-3 mb-3" src="" width="60" height="45" alt="..." />
+                            <div class="h5 text-white">Ask the community</div>
+                            <p class="mb-0 text-white">Explore our community forums and communicate with other users.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        <!-- Footer-->
+{% endblock %}
+<!-- 
+<ul class="list-unstyled">
+    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Email</li></h5>
+    <h6><li>kingsleyrichardsgeorge4@gmail.com</li></h6>
+    <h6><li>kingsgeorge751@gmail.com</li></h6>
+    <h6><li>kingzg62@gmail.com</li></h6>
+    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Phone</li></h5>
+    <h6><li>+234-808-924-8520</li></h6>
+    <h6><li>+234-703-988-9971</li></h6>
+    <h6><li>+01-564-600-534</li></h6>
+    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Address</li></h5>
+    <h6><li>4826 White Avenue, Corpus Christi, Houston, Texas, USA.</li></h6>
+    <h6><li>No 7, Fed Low-Cost Housing Estate, Kuje, Abuja, Nigeria.</li></h6>
+    <h6><li>563 Cape Town, South Africa.</li></h6>
+    </ul> -->

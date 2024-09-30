@@ -1,0 +1,106 @@
+{% extends 'account/base.html'%}
+{% load static %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %}); padding-top:100px; padding-bottom:100px;">
+    <div class="container my-5">
+        <div class="row justify-content-between">
+            <div class="col-md-6 text-white">
+                <h1 class="font-weight-bold text-success" style="font-family: cursive; font-size: 45px;">Login</h1>
+                <h5 class="my-4">
+                    We'd love to hear from you again!
+                </h5>
+                <ul class="list-unstyled">
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Email</li></h5>
+                    <h6><li>kingsleyrichardsgeorge4@gmail.com</li></h6>
+                    <h6><li>kingsleygeorge751@gmail.com</li></h6>
+                    <h6><li>kingsgeorge751@gmail.com</li></h6>
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Phone</li></h5>
+                    <h6><li>+234-808-924-8520</li></h6>
+                    <h6><li>+234-703-988-997</li></h6>
+                    <h6><li>+01-564-600-534</li></h6>
+                    <h5><li class="text-success" style="font-family: cursive; font-size: 25px;">Address</li></h5>
+                    <h6><li>4826 White Avenue, Corpus Christi, Houston, Texas, USA.</li></h6>
+                    <h6><li>No 7, Fed Low-Cost Housing Estate, Kuje, Abuja, Nigeria.</li></h6>
+                    <h6><li>563 Cape Town, South Africa.</li></h6>
+                </ul>
+            </div>
+
+            
+
+            <div class="col-md-6">
+
+                <div style="color:red; text-align: center">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+
+                <form method="post">
+                        {% csrf_token %}
+                         <!-- UserName input-->
+                            <label for="username" style="padding-left: 8px;" class="text-success">UserName</label>
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="username" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="username" type="text" data-sb-validations="required,email" required="required"/>
+                            </div>
+                            <!-- Password input-->
+                             <label for="password" style="padding-left: 8px;" class="text-success">Password</label>
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="password" style="border-radius: 15px; color: white; width: 630px; height: 3rem; background: transparent; border: 2px solid #02ca02;" id="password" type="password" data-sb-validations="required" required="required"/>
+                            </div>
+                        <br>
+                        <input class="btn btn-success" style="border-radius: 15px; width: 100%;" type="submit">
+                         <br>
+                        <p class="text-white" style="font-size: 20px; padding-top: 6px;">Don't have an account | <a href="{% url 'signup' %}" style="text-decoration: none; color: #02ca02; font-weight: 600;" class="">Sign Up</a></p>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+
+<!--<section class="py-5 jumbotron jumbotron-fluid" id="contact" style="background-image: url({% static 'img/contact-bk.jpg' %});">-->
+<!--                <div class="container px-5">-->
+<!--                    &lt;!&ndash; Contact form&ndash;&gt;-->
+<!--                    <div class="img-fluid rounded-circle mb-4 px-4">-->
+<!--                        <div class="text-center mb-5">-->
+<!--                            <h1 class="fw-bolder text-white">Login</h1>-->
+<!--&lt;!&ndash;                            <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="row gx-5 justify-{% csrf_token %content-center">-->
+<!--                            <div class="col-lg-8 col-xl-6">-->
+<!--                                <form method="post">-->
+<!--                                    -->
+<!--                                    &lt;!&ndash; UserName input&ndash;&gt;-->
+<!--                                    <label for="username" class="text-white">UserName</label>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" name="username" id="username" type="text" data-sb-validations="required,email" />-->
+<!--                                    </div>-->
+<!--                                     &lt;!&ndash; Email Address input&ndash;&gt;-->
+<!--&lt;!&ndash;                                      <label for="email">Email Address</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="form-floating mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <input class="form-control" name="email" id="email" type="email" data-sb-validations="required" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                    &lt;!&ndash; Password input&ndash;&gt;-->
+<!--                                     <label for="password" class="text-white">Password</label>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" name="password" id="password" type="password" data-sb-validations="required" />-->
+<!--                                    </div>-->
+<!--                                     &lt;!&ndash; Confirm Password input&ndash;&gt;-->
+<!--&lt;!&ndash;                                     <label for="confirm password">Confirm Password</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="form-floating mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <input class="form-control" name="password2" id="confirm password" type="password" data-sb-validations="required" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    Submit Button&ndash;&gt;-->
+<!--                                    <center><input class="btn btn-outline-success" style="border-radius: 100px; width: 100%;" type="submit"></center>-->
+<!--                                    <br>-->
+<!--                                    <p class="lead fw-normal text-center mb-0 text-white">Don't have an account  <a href="{% url 'signup' %}">Sign Up</a></p>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--  </section>-->
+{% endblock %}

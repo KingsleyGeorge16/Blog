@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}{% endblock %} | Nutrition Life Matrix</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" href="{% static 'img/logo6.png' %}" sizes="32x32" type="image/png">
+        <!-- Bootstrap icons-->
+        <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" />
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">-->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+        <style>
+            #feature-post,
+            #popular-post{
+                transition: .3s ease;
+            }
+
+            #feature-post:hover,
+            #popular-post:hover{
+                transform: translateY(-10px) scale(1.1);
+            }
+        </style>
+
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <!-- style="border-radius: 50%; padding-bottom: 3px;"-->
+            <nav class="navbar navbar-expand-lg navbar-success jumbotron jumbotron-fluid" id="banner" style="background-image: url({%  static 'img/banner-bk.jpg' %}); padding-top:-1px; padding-bottom:1px;">
+                <div class="container px-5">
+                    <div class="col-2">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo4.png' %}" width="110px" height="55" alt="logo"></a>
+                    </div>
+
+<!--                    <a class="navbar-brand" href="{% url 'index' %}">Nutrition Life Matrix</a>-->
+<!--                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul id="sidemenu" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" style="color: #02ca02;" href="{% url 'index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" style="color: #02ca02;" href="{% url 'about' %}">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" style="color: #02ca02;" href="{% url 'contact' %}">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" style="color: #02ca02;" href="{% url 'pricing' %}">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" style="color: #02ca02;" href="{% url 'faq' %}">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link login2"  href="{% url 'logout' %}">Logout</a></li> 
+                            <li class="nav-item"><a class="nav-link" style="color: white; font-weight: 600; font-size: 17px;" href="{% url 'index' %}">Hey <span style="color: #02ca02;">{{ user.username }}</span></a></li>
+
+                            {% else %}
+                             <li class="nav-item"><a class="nav-link login1" style="color: white;" href="{% url 'signup' %}">Sign Up</a></li>
+                            <li class="nav-item"><a class="nav-link login" style="color: white;" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+<!--                            <li class="nav-item dropdown">-->
+<!--                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">-->
+<!--                                    <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item dropdown">-->
+<!--                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>-->
+<!--                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">-->
+<!--                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+                            <i id="close" class="fa fa-times"></i>
+                        </ul>
+                    <div id="mobile">
+                        <i id="bar" class="fa fa-bars"></i>
+                    </div>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            {% block content %}
+
+            {% endblock %}
+
+
+            <footer class="jumbotron jumbotron-fluid" id="contact" style="background: #202d4b; margin-left: 13rem; margin-bottom: 20px; width: 1000px; border-radius: 10px; padding-top: 15px; padding-bottom: 15px;">
+                <!-- background-image: url({% static 'img/banner-bk.jpg' %}); -->
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-light" style="font-size: 1.3rem;">Copyright &copy; 2022 Nurtrition Life Matrix</div></div>
+<!--                        <ul class="col-md-6 align-self-center text-center text-md-right my-2">-->
+<!--                    <li class="d-inline-block text-center ml-2">-->
+<!--                        <a class="text-blue font-weight-bold" href="#">Privacy</a>-->
+<!--                    </li>-->
+<!--                    <li class="d-inline-block text-center ml-2">-->
+<!--                        <a class="text-blue font-weight-bold" href="#">Policy</a>-->
+<!--                    </li>-->
+<!--                    <li class="d-inline-block text-center ml-2">-->
+<!--                        <a class="text-blue font-weight-bold" href="#">Conditions</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                    <a href="https://www.google.com" class="d-inline-block text-center ml-2">-->
+<!--                        Privacy-->
+<!--                    </a>-->
+<!--                    <a href="https://www.fzmovies.net" class="d-inline-block text-center ml-2">-->
+<!--                        Terms-->
+<!--                    </a>-->
+<!--                    <a href="https://www.canva.com" class="d-inline-block text-center ml-2">-->
+<!--                        Conditions-->
+<!--                    </a>-->
+<!--                    <div class="col-md-6 align-self-center text-center text-md-right ml-2">-->
+<!--                    <a class=" link-primary" href="https://twitter.com"><i class="fa fa-twitter"></i></a>-->
+<!--                    <a class=" link-primary" href="https://facebook.com"><i class="fa fa-facebook"></i></a>-->
+<!--                    <a class=" link-primary" href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>-->
+<!--                    <a class=" link-primary" href="https://youtude.com"><i class="fa fa-youtube"></i></a>      d-inline-block text-center ml-2-->
+<!--                    </div>-->
+                  <div class="col-md-6 align-self-center text-center text-md-right my-2 social-media">
+                    <a href="https://www.facebook.com" target="_blank">
+                    	<i class="fa fa-facebook" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.twitter.com" target="_blank">
+                    	<i class="fa fa-twitter" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.pinterest.com" target="_blank">
+                    	<i class="fa fa-pinterest" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com" target="_blank">
+                    	<i class="fa fa-linkedin" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                     <a href="https://www.whatsapp.com" target="_blank">
+                    	<i class="fa fa-whatsapp" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                     <a href="https://www.instagram.com" target="_blank">
+                    	<i class="fa fa-instagram" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.medium.com" target="_blank">
+                    	<i class="fa fa-medium" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.reddict.com" target="_blank">
+                    	<i class="fa fa-reddit" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <a href="https://www.telegram.com" target="_blank">
+                    	<i class="fa fa-telegram" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a>
+
+                    <!-- <a href="https://www.threads.com" target="_blank">
+                    	<i class="fa fa-threads" aria-hidden="true" style="color: #02ca02;"></i>
+                    </a> -->
+                </div>
+                    </div>
+                </div>
+        </footer>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+ </body>
+</html>

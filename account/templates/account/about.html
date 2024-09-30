@@ -1,0 +1,85 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+            <!-- Header-->
+            <header class="py-5 bg-black">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class=" mb-3" style="font-family: 'Berkshire Swash', cursive; color: white;">Our mission is to help people stay healthy.</h1>
+                                <p class="lead fw-normal text-muted mb-4">Know more about us.</p>
+                                <a class="btn btn-outline-light btn-lg px-4 me-sm-3" style="border-radius: 20px; border: 2px solid green;" href="#scroll-target">Read our story</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About section one-->
+            <section class="jumbotron jumbotron-fluid" style="background-image: url({% static 'img/banner-bk.jpg' %}); padding-top:20px; padding-bottom:20px;" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6">
+                            <h2 class="text-white">Our founding</h2>
+                            <p class="lead fw-normal text-white mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section two-->
+            <section class="py-5 bg-black">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"></div>
+                        <div class="col-lg-6">
+                            <h2 class="" style="color: white; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Growth &amp; beyond</h2>
+                            <p class="lead fw-normal mb-0" style="color: #adacac;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team members section-->
+            <section class="jumbotron jumbotron-fluid" style="background-image: url({% static 'img/contact-bk.jpg' %}); padding-top:10px; padding-bottom:10px;">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder text-white">Our team</h2>
+                        <p class="lead fw-normal text-white mb-5">Dedicated to quality and your success</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid mb-4 px-4" style="border-radius: 50%; width: 14rem; height: 12rem;" src="{% static 'img/about-1.png' %}" width="160" height="200" alt="..." />
+                                <h5 class="fw-bolder text-white" style="font-family: cursive; font-size: 1.7rem;">James Carter</h5>
+                                <div class="fst-italic text-white">Founder &amp; CEO</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid mb-4 px-4" style="border-radius: 50%; width: 14rem; height: 12rem;" src="{% static 'img/about-2.jpg' %}" width="180" height="200" alt="..." />
+                                <h5 class="fw-bolder text-white" style="font-family: cursive; font-size: 1.7rem;">Martha Jones</h5>
+                                <div class="fst-italic text-white">CFO</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid mb-4 px-4" style="border-radius: 50%; width: 14rem; height: 12rem;" src="{% static 'img/dude3.jpeg' %}" width="200" height="200" alt="..." />
+                                <h5 class="fw-bolder text-white" style="font-family: cursive; font-size: 1.7rem;">Mark Benedict</h5>
+                                <div class="fst-italic text-white">Operations Manager</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid mb-4 px-4" style="border-radius: 50%; width: 14rem; height: 12rem;" src="{% static 'img/about-4.jpg' %}" style="width: 200px; border-radius: 2px;" alt="..." />
+                                <h5 class="fw-bolder text-white" style="font-family: cursive; font-size: 1.7rem;">McKenzie Johnson</h5>
+                                <div class="fst-italic text-white">CTO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% endblock %}fw-bold
