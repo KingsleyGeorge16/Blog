@@ -33,7 +33,7 @@ class Post(models.Model):
     writer = models.CharField(max_length=200, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
     first_content = models.TextField(max_length=200, null=True)
-    content = models.TextField()
+    content = models.TextField(null=True)
     # category = models.ForeignKey(on_delete=models.SET_NULL, related_name='category', blank=True, null=True)
     image = models.ImageField( upload_to='image/', null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
