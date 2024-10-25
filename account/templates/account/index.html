@@ -86,15 +86,15 @@
                     <div class="text-white"> ||</div>
                     <div class="text-white"> ||</div>
 
-                    <div class="row gx-5">
-                         {% for post in posts %}
+                    <div class="row gx-5">   
+                        {% for post in posts %}
                          <!-- id="post_box" -->
-                        <div class="col-lg-4 mb-5" id="feature-post">
+                        <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
                                 <div class="card-body p-4">
                                     <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.section }}</div>  <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.add_more }}</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="{% url 'detail-featured' post.slug %}"><div class="h5 card-title mb-3">{{ post.title }}</div></a>
-                                    <p class="card-text mb-0">{{ post.first_content }} <br> <span style="color: gray; text-decoration: none;">See More...</span></p>
+                                    <p class="card-text mb-0">{{ post.content|slice:"0:200" }}.....See More</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
@@ -110,6 +110,7 @@
                             </div>
                         </div>
                         {% endfor %}
+
                     </div>
                 </div>
             </section>
@@ -164,7 +165,7 @@
                                 <div class="card-body p-4">
                                     <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ posts.section }}</div>  <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ post.add_more }}</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="{% url 'detail' posts.slug %}"><h5 class="card-title mb-3">{{ posts.title }}</h5></a>
-                                    <p class="card-text mb-0">{{ posts.first_content }} <br> <span style="color: gray; text-decoration: none;">See More...</span></p>
+                                    <p class="card-text mb-0">{{ posts.content|slice:"0:200" }}......See More</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
