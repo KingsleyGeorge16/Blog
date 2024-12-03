@@ -27,14 +27,13 @@
                         <div class="text-muted fst-italic mb-2">{{ post.created_on }}</div>
                         <br>
                         <!-- Post categories-->
-<!--                        <a class="badge bg-success text-decoration-none link-light" href="#!">Web Design</a>-->
-<!--                        <a class="badge bg-success text-decoration-none link-light" href="#!">Freebies</a>-->
+                       <!-- <a class="badge bg-success text-decoration-none link-light" href="#!">Web Design</a>
+                       <a class="badge bg-success text-decoration-none link-light" href="#!">Freebies</a> -->
                     </header>
                     <!-- Preview image figure-->
                     <img class="img-fluid" src="{{ post.header_image.url }}" style="border-radius: 10px; width: 200px;"  alt="..." /><hr style="color: white;">
                     <section class="mb-5">
-                        <p class="fs-6 mb-4">{{ post.content }}</p>
-
+                        <p class="fs-6 mb-4" style="text-align: justify; line-height: 27px;">{{ post.content }}</p>
                     </section>
                 </article>
                 <!-- Comments section-->
